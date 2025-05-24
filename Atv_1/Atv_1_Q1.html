@@ -20,7 +20,7 @@
     <script>
         document.getElementById("Formulario").addEventListener("submit", function(a){
             const radios = document.querySelectorAll("input[type='radio']"); //Seleciona os radios
-            for (const radio of radios) { //radio dentre os radios
+            for (const radio of radios) { //radio entre os radios
                 if (radio.checked) { // se radio estiver marcado
                     if(radio.value == "outra"){ //caso o radio seja o "outra":
                     document.body.style.backgroundColor=(document.getElementById("CorPersonalizada").value);    
@@ -28,9 +28,9 @@
                     document.body.style.backgroundColor=(radio.value);
                     }
                 }
-        }
+            }
             a.preventDefault(); //Cancela o envio do formulário
-    })
+        })
     </script>
 </body>
 </html>
