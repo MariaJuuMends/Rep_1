@@ -9,21 +9,28 @@
     <form action="submit" id="Formulario">
         <h3>Selecione uma cor</h3>
         
-        <label><input type="radio" name="cor" value="Verde"> Verde</label><br>
-        <label><input type="radio" name="cor" value="Vermelho"> Vermelho</label><br>
-        <label><input type="radio" name="cor" value="Azul"> Azul</label><br>
-        <label><input type="radio" name="cor" value="Amarelo"> Amarelo</label><br>
-        <label><input type="radio" name="cor" value="Outra"> Outra</label><br>
+        <label><input type="radio" name="cor" value="green">Verde</label><br>
+        <label><input type="radio" name="cor" value="red">Vermelho</label><br>
+        <label><input type="radio" name="cor" value="blue">Azul</label><br>
+        <label><input type="radio" name="cor" value="yellow">Amarelo</label><br>
+        <label><input type="radio" name="cor" value="outra">Outra<input type="color" id="CorPersonalizada"></label><br>
+        <button type="submit">Aplicar Cor</button>
     </form>
 
     <script>
-        document.getElementById("Formulario").addEventListener("submit", function(){
-            const radios = document.querySelectorAll("input[type='radio']");
-            for (const radio of radios) {
-                if (radio.checked) {
-                    
+        document.getElementById("Formulario").addEventListener("submit", function(a){
+            const radios = document.querySelectorAll("input[type='radio']"); //Seleciona os radios
+            for (const radio of radios) { //radio dentre os radios
+                if (radio.checked) { // se radio estiver marcado
+                    if(radio.value == "outra"){ //caso o radio seja o "outra":
+                    document.body.style.backgroundColor=(document.getElementById("CorPersonalizada").value);    
+                    }else{//verde, vermelho, amarelo e azul:
+                    document.body.style.backgroundColor=(radio.value);
+                    }
                 }
-        })
+        }
+            a.preventDefault(); //Cancela o envio do formulário
+    })
     </script>
 </body>
 </html>
