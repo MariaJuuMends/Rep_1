@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 1</title>
+</head>
+<body>
+    <form action="submit" id="Formulario">
+        <h3>Selecione uma cor</h3>
+        
+        <label><input type="radio" name="cor" value="Verde"> Verde</label><br>
+        <label><input type="radio" name="cor" value="Vermelho"> Vermelho</label><br>
+        <label><input type="radio" name="cor" value="Azul"> Azul</label><br>
+        <label><input type="radio" name="cor" value="Amarelo"> Amarelo</label><br>
+        <label><input type="radio" name="cor" value="Outra"> Outra</label><br>
+    </form>
+
+    <script>
+        document.getElementById("Formulario").addEventListener("submit", function(){
+            const radios = document.querySelectorAll("input[type='radio']");
+            for (const radio of radios) {
+                if (radio.checked) {
+                    
+                }
+        })
+    </script>
+</body>
+</html>
